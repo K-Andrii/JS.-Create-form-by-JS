@@ -48,18 +48,18 @@ subTitle.classList.add("sub-tittle");
 subTitle.textContent = 'We always keep your name and email address private.';
 
 //======Inputs=========
-const inputFirstName = createInput({id: "first-name", placeholder: "First name", required: true});
-const inputLastName = createInput({id: "last-name", placeholder: "Last name", required: true});
+const inputFirstName = createInput({id: "first-name", name:"firstName", placeholder: "First name", required: true});
+const inputLastName = createInput({id: "last-name", name:"lastName", placeholder: "Last name", required: true});
 const inputsContainer1 = createContainer('inputs-container');
 inputsContainer1.append(inputFirstName, inputLastName);
 
-const inputDisplayName = createInput({id: "display-name", placeholder: "Display Name", required: true});
-const inputEmail = createInput({type:'email', id: "email", placeholder: "Email Addres", required: true});
+const inputDisplayName = createInput({id: "display-name", name:'displayName', placeholder: "Display Name", required: true});
+const inputEmail = createInput({type:'email', id: "email", name:'email',  placeholder: "Email Addres", required: true});
 const inputsContainer2 = createContainer('inputs-container');
 inputsContainer2.append(inputDisplayName, inputEmail);
 
-const inputPassword = createInput({type:'password', id: "password", placeholder: "Password", required: true});
-const inputPasswordConfirm = createInput({type:'password', id: "password-confirm", placeholder: "Password Confirmation", required: true});
+const inputPassword = createInput({type:'password', id: "password", name:'password', placeholder: "Password", required: true});
+const inputPasswordConfirm = createInput({type:'password', id: "password-confirm", name:'passwordConfirm', placeholder: "Password Confirmation", required: true});
 const inputsContainer3 = createContainer('inputs-container');
 inputsContainer3.append(inputPassword, inputPasswordConfirm);
 
@@ -110,7 +110,7 @@ radioContainer.append(radioItem1, radioItem2);
 
 
 //=====checkbox====
-const allowOffersInput = createInput({type: 'checkbox', name: 'allow-offer', id: 'allow-offers'});
+const allowOffersInput = createInput({type: 'checkbox', name: 'allowOffer', id: 'allow-offers'});
 
 const allowOffersLabel = document.createElement("label");
 allowOffersLabel.setAttribute("for", "allow-offers");
@@ -122,8 +122,6 @@ checkboxContainer.append(allowOffersInput, allowOffersLabel)
 //btn
 const btn = createButton({textContent: 'Create account'});
 
-//========Apends=======
+//======== Append =======
 form.append(mainTitle, subTitle, inputsSection, radioContainer, checkboxContainer, btn);
 document.body.append(form);
-
-
