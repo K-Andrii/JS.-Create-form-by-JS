@@ -122,6 +122,9 @@ checkboxContainer.append(allowOffersInput, allowOffersLabel)
 //btn
 const btn = createButton({textContent: 'Create account'});
 
+
 //======== Append =======
 form.append(mainTitle, subTitle, inputsSection, radioContainer, checkboxContainer, btn);
-document.body.append(form);
+
+//=======Export======
+export default form

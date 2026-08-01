@@ -12,6 +12,7 @@ main{
 }
 
 form{
+    margin: 200px auto 0;
     width: 550px;
     padding: 24px;
     color: white;

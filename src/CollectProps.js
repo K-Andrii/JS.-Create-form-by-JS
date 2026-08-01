@@ -1,14 +1,20 @@
 class Person {
-    constructor({password, passwordConfirm, ...props}){
-        Object.assign(this, props);
+    constructor(inputsData){
+        inputsData.forEach((input)=>{
+            if(input.type === 'password' || input.type === 'checkbox' || input.type === 'radio' || !input.name) return
+
+            this[input.name] = input.value;
+        })
     }
 }
 
-form.addEventListener('submit', (event) => {
+function collectProps(event){
     event.preventDefault();
 
-    const formDataObj = Object.fromEntries((new FormData(form)))
-    const person = new Person(formDataObj)
+    const inputsData = event.target.querySelectorAll("input");
+    const person = new Person(inputsData)
 
     if(person.lastName) localStorage.setItem(person.lastName, JSON.stringify(person))
-});
+}
+
+export default collectProps;
