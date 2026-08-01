@@ -96,3 +96,13 @@ button[type="submit"]{
     border-radius: 3px;
     background-color: #4defd7;
 }
+
+.email-error {
+    text-align: center;
+    border: 1px solid red;
+    font-size: 10px;
+    position: absolute;
+    padding: 2px 4px ;
+    background-color: white;
+    color: red;
+}
