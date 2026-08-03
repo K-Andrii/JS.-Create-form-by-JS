@@ -1,3 +1,5 @@
+import passwordValidation from './passwordValidation.js';
+
 class Person {
     constructor(data){
         Object.assign(this, data);
@@ -6,6 +8,8 @@ class Person {
 
 function collectProps(event){
     event.preventDefault();
+
+    if(!passwordValidation()) return false;
 
     const inputsData = event.target.querySelectorAll("input");
     const cleanData = {}
